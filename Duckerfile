@@ -1,0 +1,9 @@
+FROM shadowsocks/shadowsocks-libev
+
+ENV PASSWORD=changeme
+ENV METHOD=aes-256-gcm
+ENV PORT=8388
+
+EXPOSE ${PORT}
+
+CMD ss-server -p ${PORT} -k ${PASSWORD} -m ${METHOD} -u
